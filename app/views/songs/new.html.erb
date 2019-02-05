@@ -1,0 +1,10 @@
+<h1>New Song </h1>
+<%= form_for @song do |f| %>
+  <%= f.label :name, "Song Name"  %><br>
+  <%= f.text_field :name %><br>
+  <%= f.label :artist_id, "Artist" %><br>
+  <%= collection_select(:song, :artist_id, Artist.all, :id, :name) %><br>
+  <%= f.label :genre_id, "Genre" %><br>
+  <%= collection_select(:song, :genre_id, Genre.all, :id, :name) %><br>
+  <%= f.submit %>
+<% end %>
